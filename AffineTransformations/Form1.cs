@@ -20,7 +20,15 @@ namespace AffineTransformations
         bool isDrawingMode = false;
         bool isSomethingOnScreen = false;
         bool isPointChoosingMode = false;
+
+        /// <summary>
+        /// Самое главное здесь - набор точек (и для полигона, и для отрезка, и для всего...)
+        /// </summary>
         List<Point> polygonPoints = new List<Point>();
+
+        /// <summary>
+        /// Для рисования
+        /// </summary>
         SolidBrush blackBrush = new SolidBrush(Color.Black);
         Pen blackPen = new Pen(Color.Black, 3);
         Graphics g;
@@ -68,41 +76,6 @@ namespace AffineTransformations
         {
             canvas.Image = new Bitmap(1300, 900);
             polygonPoints.Clear();
-        }
-
-        private void buttonShift_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonScale_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonСhooseCentre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonRotateLine_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonCrossLines_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonIsPointInPolygon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonClassifyPoint_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

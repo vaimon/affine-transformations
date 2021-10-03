@@ -219,6 +219,7 @@ namespace AffineTransformations
             // labelChoodePoint
             // 
             this.labelChoodePoint.AutoSize = true;
+            this.labelChoodePoint.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelChoodePoint.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelChoodePoint.Location = new System.Drawing.Point(815, 35);
             this.labelChoodePoint.Name = "labelChoodePoint";
