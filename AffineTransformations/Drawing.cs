@@ -39,7 +39,7 @@ namespace AffineTransformations
                 if (Math.Abs(polygonPoints[0].X - e.X) * Math.Abs(polygonPoints[0].Y - e.Y) < 25)
                 {
                     g.DrawLine(blackPen, polygonPoints.Last(), polygonPoints[0]);
-                    setFlags();
+                    setFlags(isAffineTransformationsEnabled: true);
                     return;
                 }
                 g.DrawLine(blackPen, polygonPoints.Last(), e.Location);
@@ -59,7 +59,7 @@ namespace AffineTransformations
             {
                 g.Clear(Color.White);
                 g.DrawLine(blackPen, polygonPoints.First(), e.Location);
-                setFlags();
+                setFlags(isAffineTransformationsEnabled: true);
                 return;
             }
             else
@@ -72,7 +72,7 @@ namespace AffineTransformations
         {
             polygonPoints.Add(e.Location);
             g.FillEllipse(blackBrush,e.X-3,e.Y-3,7,7);
-            setFlags();
+            setFlags(isAffineTransformationsEnabled: true);
         }
     }
 }

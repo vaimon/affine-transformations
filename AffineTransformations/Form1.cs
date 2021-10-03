@@ -17,17 +17,37 @@ namespace AffineTransformations
             InitializeComponent();
         }
 
-        public bool isDrawingMode = false;
+        bool isDrawingMode = false;
         bool isSomethingOnScreen = false;
-        public List<Point> polygonPoints = new List<Point>();
-        public SolidBrush blackBrush = new SolidBrush(Color.Black);
-        public Pen blackPen = new Pen(Color.Black, 3);
-        public Graphics g;
+        bool isPointChoosingMode = false;
+        List<Point> polygonPoints = new List<Point>();
+        SolidBrush blackBrush = new SolidBrush(Color.Black);
+        Pen blackPen = new Pen(Color.Black, 3);
+        Graphics g;
 
-        void setFlags(bool isDrawingMode = false, bool showShapeSelect = false)
+        void setFlags(bool isDrawingMode = false, bool showShapeSelect = false, bool isAffineTransformationsEnabled = false, bool isPointChoosing = false)
         {
             this.isDrawingMode = isDrawingMode;
-            comboBoxShape.Visible = showShapeSelect;
+            comboBoxShape.Enabled = showShapeSelect;
+
+            textShiftX.Enabled = isAffineTransformationsEnabled;
+            textShiftY.Enabled = isAffineTransformationsEnabled;
+            buttonShift.Enabled = isAffineTransformationsEnabled;
+            buttonRotate.Enabled = isAffineTransformationsEnabled;
+            textAngle.Enabled = isAffineTransformationsEnabled;
+            buttonScale.Enabled = isAffineTransformationsEnabled;
+            textScale.Enabled = isAffineTransformationsEnabled;
+
+            buttonRotateLine.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 1;
+            buttonCrossLines.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 1;
+
+            buttonClassifyPoint.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 1;
+            buttonIsPointInPolygon.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 0;
+
+            isPointChoosingMode = isPointChoosing;
+            buttonСhooseCentre.Visible = isPointChoosing;
+            labelChoodePoint.Visible = isPointChoosing;
+
         }
 
         private void canvas_MouseClick(object sender, MouseEventArgs e)
@@ -48,6 +68,41 @@ namespace AffineTransformations
         {
             canvas.Image = new Bitmap(1300, 900);
             polygonPoints.Clear();
+        }
+
+        private void buttonShift_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonScale_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonСhooseCentre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRotateLine_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCrossLines_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonIsPointInPolygon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClassifyPoint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
