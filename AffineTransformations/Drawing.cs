@@ -57,14 +57,13 @@ namespace AffineTransformations
             polygonPoints.Add(e.Location);
             if (polygonPoints.Count > 1)
             {
-                g.Clear(Color.White);
                 g.DrawLine(blackPen, polygonPoints.First(), e.Location);
                 setFlags(isAffineTransformationsEnabled: true);
                 return;
             }
             else
             {
-                g.FillEllipse(blackBrush, e.X, e.Y, 5, 5);
+                g.FillEllipse(blackBrush, e.X-3, e.Y-3, 7, 7);
             }
         }
 
