@@ -57,8 +57,8 @@ namespace AffineTransformations
             // canvas
             // 
             this.canvas.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.canvas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.canvas.Location = new System.Drawing.Point(0, 0);
+            this.canvas.Dock = System.Windows.Forms.DockStyle.Right;
+            this.canvas.Location = new System.Drawing.Point(262, 0);
             this.canvas.Name = "canvas";
             this.canvas.Size = new System.Drawing.Size(1300, 900);
             this.canvas.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace AffineTransformations
             // 
             // buttonPolygon
             // 
-            this.buttonPolygon.Location = new System.Drawing.Point(36, 37);
+            this.buttonPolygon.Location = new System.Drawing.Point(21, 95);
             this.buttonPolygon.Name = "buttonPolygon";
             this.buttonPolygon.Size = new System.Drawing.Size(226, 43);
             this.buttonPolygon.TabIndex = 1;
@@ -92,7 +92,7 @@ namespace AffineTransformations
             "Полигон",
             "Отрезок",
             "Точка"});
-            this.comboBoxShape.Location = new System.Drawing.Point(36, 86);
+            this.comboBoxShape.Location = new System.Drawing.Point(21, 144);
             this.comboBoxShape.Name = "comboBoxShape";
             this.comboBoxShape.Size = new System.Drawing.Size(226, 33);
             this.comboBoxShape.TabIndex = 2;
@@ -101,7 +101,7 @@ namespace AffineTransformations
             // buttonShift
             // 
             this.buttonShift.Enabled = false;
-            this.buttonShift.Location = new System.Drawing.Point(36, 191);
+            this.buttonShift.Location = new System.Drawing.Point(21, 249);
             this.buttonShift.Name = "buttonShift";
             this.buttonShift.Size = new System.Drawing.Size(226, 43);
             this.buttonShift.TabIndex = 1;
@@ -112,7 +112,7 @@ namespace AffineTransformations
             // textShiftX
             // 
             this.textShiftX.Enabled = false;
-            this.textShiftX.Location = new System.Drawing.Point(69, 154);
+            this.textShiftX.Location = new System.Drawing.Point(54, 212);
             this.textShiftX.MaxLength = 5;
             this.textShiftX.Name = "textShiftX";
             this.textShiftX.Size = new System.Drawing.Size(69, 31);
@@ -121,7 +121,7 @@ namespace AffineTransformations
             // textShiftY
             // 
             this.textShiftY.Enabled = false;
-            this.textShiftY.Location = new System.Drawing.Point(193, 154);
+            this.textShiftY.Location = new System.Drawing.Point(178, 212);
             this.textShiftY.MaxLength = 5;
             this.textShiftY.Name = "textShiftY";
             this.textShiftY.Size = new System.Drawing.Size(69, 31);
@@ -130,7 +130,7 @@ namespace AffineTransformations
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 157);
+            this.label1.Location = new System.Drawing.Point(21, 215);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 25);
             this.label1.TabIndex = 4;
@@ -139,7 +139,7 @@ namespace AffineTransformations
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 157);
+            this.label2.Location = new System.Drawing.Point(145, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 25);
             this.label2.TabIndex = 4;
@@ -148,7 +148,7 @@ namespace AffineTransformations
             // buttonRotate
             // 
             this.buttonRotate.Enabled = false;
-            this.buttonRotate.Location = new System.Drawing.Point(36, 278);
+            this.buttonRotate.Location = new System.Drawing.Point(21, 336);
             this.buttonRotate.Name = "buttonRotate";
             this.buttonRotate.Size = new System.Drawing.Size(226, 43);
             this.buttonRotate.TabIndex = 1;
@@ -159,7 +159,7 @@ namespace AffineTransformations
             // textAngle
             // 
             this.textAngle.Enabled = false;
-            this.textAngle.Location = new System.Drawing.Point(126, 241);
+            this.textAngle.Location = new System.Drawing.Point(111, 299);
             this.textAngle.MaxLength = 5;
             this.textAngle.Name = "textAngle";
             this.textAngle.Size = new System.Drawing.Size(136, 31);
@@ -168,7 +168,7 @@ namespace AffineTransformations
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 244);
+            this.label3.Location = new System.Drawing.Point(21, 302);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 4;
@@ -178,7 +178,7 @@ namespace AffineTransformations
             // 
             this.buttonScale.Enabled = false;
             this.buttonScale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonScale.Location = new System.Drawing.Point(36, 365);
+            this.buttonScale.Location = new System.Drawing.Point(21, 423);
             this.buttonScale.Name = "buttonScale";
             this.buttonScale.Size = new System.Drawing.Size(226, 43);
             this.buttonScale.TabIndex = 1;
@@ -189,7 +189,7 @@ namespace AffineTransformations
             // textScale
             // 
             this.textScale.Enabled = false;
-            this.textScale.Location = new System.Drawing.Point(126, 328);
+            this.textScale.Location = new System.Drawing.Point(111, 386);
             this.textScale.MaxLength = 5;
             this.textScale.Name = "textScale";
             this.textScale.Size = new System.Drawing.Size(136, 31);
@@ -198,7 +198,7 @@ namespace AffineTransformations
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 331);
+            this.label4.Location = new System.Drawing.Point(21, 389);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 25);
             this.label4.TabIndex = 4;
@@ -207,7 +207,7 @@ namespace AffineTransformations
             // buttonСhooseCentre
             // 
             this.buttonСhooseCentre.Enabled = false;
-            this.buttonСhooseCentre.Location = new System.Drawing.Point(612, 86);
+            this.buttonСhooseCentre.Location = new System.Drawing.Point(863, 80);
             this.buttonСhooseCentre.Name = "buttonСhooseCentre";
             this.buttonСhooseCentre.Size = new System.Drawing.Size(146, 43);
             this.buttonСhooseCentre.TabIndex = 1;
@@ -220,7 +220,7 @@ namespace AffineTransformations
             // 
             this.labelChoodePoint.AutoSize = true;
             this.labelChoodePoint.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelChoodePoint.Location = new System.Drawing.Point(564, 35);
+            this.labelChoodePoint.Location = new System.Drawing.Point(815, 35);
             this.labelChoodePoint.Name = "labelChoodePoint";
             this.labelChoodePoint.Size = new System.Drawing.Size(239, 38);
             this.labelChoodePoint.TabIndex = 4;
@@ -231,7 +231,7 @@ namespace AffineTransformations
             // 
             this.buttonRotateLine.Enabled = false;
             this.buttonRotateLine.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonRotateLine.Location = new System.Drawing.Point(36, 443);
+            this.buttonRotateLine.Location = new System.Drawing.Point(21, 501);
             this.buttonRotateLine.Name = "buttonRotateLine";
             this.buttonRotateLine.Size = new System.Drawing.Size(226, 43);
             this.buttonRotateLine.TabIndex = 1;
@@ -243,7 +243,7 @@ namespace AffineTransformations
             // 
             this.buttonCrossLines.Enabled = false;
             this.buttonCrossLines.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCrossLines.Location = new System.Drawing.Point(36, 492);
+            this.buttonCrossLines.Location = new System.Drawing.Point(21, 550);
             this.buttonCrossLines.Name = "buttonCrossLines";
             this.buttonCrossLines.Size = new System.Drawing.Size(226, 43);
             this.buttonCrossLines.TabIndex = 1;
@@ -255,7 +255,7 @@ namespace AffineTransformations
             // 
             this.buttonIsPointInPolygon.Enabled = false;
             this.buttonIsPointInPolygon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonIsPointInPolygon.Location = new System.Drawing.Point(36, 574);
+            this.buttonIsPointInPolygon.Location = new System.Drawing.Point(21, 632);
             this.buttonIsPointInPolygon.Name = "buttonIsPointInPolygon";
             this.buttonIsPointInPolygon.Size = new System.Drawing.Size(226, 85);
             this.buttonIsPointInPolygon.TabIndex = 1;
@@ -267,7 +267,7 @@ namespace AffineTransformations
             // 
             this.buttonClassifyPoint.Enabled = false;
             this.buttonClassifyPoint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClassifyPoint.Location = new System.Drawing.Point(36, 665);
+            this.buttonClassifyPoint.Location = new System.Drawing.Point(21, 723);
             this.buttonClassifyPoint.Name = "buttonClassifyPoint";
             this.buttonClassifyPoint.Size = new System.Drawing.Size(226, 85);
             this.buttonClassifyPoint.TabIndex = 1;
@@ -279,8 +279,8 @@ namespace AffineTransformations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1300, 900);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1562, 900);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelChoodePoint);
@@ -302,6 +302,7 @@ namespace AffineTransformations
             this.Controls.Add(this.buttonPolygon);
             this.Controls.Add(this.canvas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Алгем (на минималках)";
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
