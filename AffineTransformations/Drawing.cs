@@ -10,6 +10,24 @@ namespace AffineTransformations
 {
     public partial class Form1
     {
+        private void buttonPolygon_Click(object sender, EventArgs e)
+        {
+            canvas.Image = new Bitmap(1300, 900);
+            polygonPoints.Clear();
+            if (!isSomethingOnScreen)
+            {
+                setFlags(true, true);
+                comboBoxShape.SelectedIndex = 0;
+                buttonPolygon.Text = "Очистить";
+                g = canvas.CreateGraphics();
+            }
+            else
+            {
+                buttonPolygon.Text = "Нарисовать что-нибудь";
+                setFlags();
+            }
+            isSomethingOnScreen = !isSomethingOnScreen;
+        }
         void drawPolygon(MouseEventArgs e)
         {
             if (polygonPoints.Count > 0)
