@@ -16,10 +16,9 @@ namespace AffineTransformations
             polygonPoints.Clear();
             if (!isSomethingOnScreen)
             {
-                setFlags(true, true);
+                setFlags(isDrawingMode:true);
                 comboBoxShape.SelectedIndex = 0;
                 buttonPolygon.Text = "Очистить";
-                g = canvas.CreateGraphics();
             }
             else
             {
@@ -49,6 +48,23 @@ namespace AffineTransformations
             {
                 polygonPoints.Add(e.Location);
                 g.FillEllipse(blackBrush, e.X - 2, e.Y - 2, 5, 5);
+            }
+        }
+
+        void redrawPolygon()
+        {
+            g.Clear(Color.White);
+            if(polygonPoints.Count == 1)
+            {
+                g.FillEllipse(blackBrush, polygonPoints[0].X - 3, polygonPoints[0].Y - 3, 7, 7);
+            }
+            for(int i = 1; i < polygonPoints.Count; i++)
+            {
+                g.DrawLine(blackPen, polygonPoints[i - 1], polygonPoints[i]);
+            }
+            if(polygonPoints.Count > 2)
+            {
+                g.DrawLine(blackPen, polygonPoints.First(), polygonPoints.Last());
             }
         }
 

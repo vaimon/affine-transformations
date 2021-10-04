@@ -15,6 +15,7 @@ namespace AffineTransformations
         public Form1()
         {
             InitializeComponent();
+            g = canvas.CreateGraphics();
         }
 
         bool isDrawingMode = false;
@@ -33,10 +34,10 @@ namespace AffineTransformations
         Pen blackPen = new Pen(Color.Black, 3);
         Graphics g;
 
-        void setFlags(bool isDrawingMode = false, bool showShapeSelect = false, bool isAffineTransformationsEnabled = false, bool isPointChoosing = false)
+        void setFlags(bool isDrawingMode = false, bool isAffineTransformationsEnabled = false, bool isPointChoosing = false)
         {
             this.isDrawingMode = isDrawingMode;
-            comboBoxShape.Enabled = showShapeSelect;
+            comboBoxShape.Enabled = isDrawingMode;
 
             textShiftX.Enabled = isAffineTransformationsEnabled;
             textShiftY.Enabled = isAffineTransformationsEnabled;
@@ -54,6 +55,7 @@ namespace AffineTransformations
 
             isPointChoosingMode = isPointChoosing;
             buttonСhooseCentre.Visible = isPointChoosing;
+            buttonСhooseCentre.Enabled = isPointChoosing;
             labelChoodePoint.Visible = isPointChoosing;
 
         }
@@ -68,6 +70,9 @@ namespace AffineTransformations
                     case 1: drawLine(e); break;
                     case 2: drawPoint(e); break;
                 }
+            } else if (isPointChoosingMode)
+            {
+                onPointChosen(e.Location);
             }
             
         }
