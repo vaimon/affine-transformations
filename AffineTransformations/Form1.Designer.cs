@@ -31,8 +31,6 @@ namespace AffineTransformations
         {
             this.canvas = new System.Windows.Forms.PictureBox();
             this.buttonPolygon = new System.Windows.Forms.Button();
-            this.chooseFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.comboBoxShape = new System.Windows.Forms.ComboBox();
             this.buttonShift = new System.Windows.Forms.Button();
             this.textShiftX = new System.Windows.Forms.TextBox();
@@ -76,15 +74,6 @@ namespace AffineTransformations
             this.buttonPolygon.Text = "Нарисовать что-нибудь";
             this.buttonPolygon.UseVisualStyleBackColor = true;
             this.buttonPolygon.Click += new System.EventHandler(this.buttonPolygon_Click);
-            // 
-            // chooseFileDialog
-            // 
-            this.chooseFileDialog.Filter = "Картинки|*.jpeg;*.jpg";
-            this.chooseFileDialog.InitialDirectory = "C:\\Users\\niko1\\Desktop\\images";
-            // 
-            // colorDialog
-            // 
-            this.colorDialog.Color = System.Drawing.Color.DarkRed;
             // 
             // comboBoxShape
             // 
@@ -339,8 +328,6 @@ namespace AffineTransformations
 
         private System.Windows.Forms.PictureBox canvas;
         private System.Windows.Forms.Button buttonPolygon;
-        private System.Windows.Forms.OpenFileDialog chooseFileDialog;
-        private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.ComboBox comboBoxShape;
         private System.Windows.Forms.Button buttonShift;
         private System.Windows.Forms.TextBox textShiftX;
