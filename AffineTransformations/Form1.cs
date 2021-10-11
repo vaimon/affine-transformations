@@ -45,7 +45,8 @@ namespace AffineTransformations
             buttonRotate.Enabled = isAffineTransformationsEnabled;
             textAngle.Enabled = isAffineTransformationsEnabled;
             buttonScale.Enabled = isAffineTransformationsEnabled;
-            textScale.Enabled = isAffineTransformationsEnabled;
+            textScaleX.Enabled = isAffineTransformationsEnabled;
+            textScaleY.Enabled = isAffineTransformationsEnabled;
 
             buttonRotateLine.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 1;
             buttonCrossLines.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 1;

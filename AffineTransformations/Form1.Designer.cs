@@ -41,7 +41,7 @@ namespace AffineTransformations
             this.textAngle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonScale = new System.Windows.Forms.Button();
-            this.textScale = new System.Windows.Forms.TextBox();
+            this.textScaleX = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonСhooseCentre = new System.Windows.Forms.Button();
             this.labelChoodePoint = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@ namespace AffineTransformations
             this.buttonCrossLines = new System.Windows.Forms.Button();
             this.buttonIsPointInPolygon = new System.Windows.Forms.Button();
             this.buttonClassifyPoint = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textScaleY = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
@@ -177,14 +177,14 @@ namespace AffineTransformations
             this.buttonScale.UseVisualStyleBackColor = true;
             this.buttonScale.Click += new System.EventHandler(this.buttonScale_Click);
             // 
-            // textScale
+            // textScaleX
             // 
-            this.textScale.Enabled = false;
-            this.textScale.Location = new System.Drawing.Point(62, 446);
-            this.textScale.MaxLength = 5;
-            this.textScale.Name = "textScale";
-            this.textScale.Size = new System.Drawing.Size(69, 31);
-            this.textScale.TabIndex = 3;
+            this.textScaleX.Enabled = false;
+            this.textScaleX.Location = new System.Drawing.Point(62, 446);
+            this.textScaleX.MaxLength = 5;
+            this.textScaleX.Name = "textScaleX";
+            this.textScaleX.Size = new System.Drawing.Size(69, 31);
+            this.textScaleX.TabIndex = 3;
             // 
             // label4
             // 
@@ -268,14 +268,14 @@ namespace AffineTransformations
             this.buttonClassifyPoint.UseVisualStyleBackColor = true;
             this.buttonClassifyPoint.Click += new System.EventHandler(this.buttonClassifyPoint_Click);
             // 
-            // textBox1
+            // textScaleY
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(178, 446);
-            this.textBox1.MaxLength = 5;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(69, 31);
-            this.textBox1.TabIndex = 3;
+            this.textScaleY.Enabled = false;
+            this.textScaleY.Location = new System.Drawing.Point(178, 446);
+            this.textScaleY.MaxLength = 5;
+            this.textScaleY.Name = "textScaleY";
+            this.textScaleY.Size = new System.Drawing.Size(69, 31);
+            this.textScaleY.TabIndex = 3;
             // 
             // label5
             // 
@@ -298,8 +298,8 @@ namespace AffineTransformations
             this.Controls.Add(this.labelChoodePoint);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textScale);
+            this.Controls.Add(this.textScaleY);
+            this.Controls.Add(this.textScaleX);
             this.Controls.Add(this.textAngle);
             this.Controls.Add(this.textShiftY);
             this.Controls.Add(this.textShiftX);
@@ -338,7 +338,7 @@ namespace AffineTransformations
         private System.Windows.Forms.TextBox textAngle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonScale;
-        private System.Windows.Forms.TextBox textScale;
+        private System.Windows.Forms.TextBox textScaleX;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonСhooseCentre;
         private System.Windows.Forms.Label labelChoodePoint;
@@ -346,7 +346,7 @@ namespace AffineTransformations
         private System.Windows.Forms.Button buttonCrossLines;
         private System.Windows.Forms.Button buttonIsPointInPolygon;
         private System.Windows.Forms.Button buttonClassifyPoint;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textScaleY;
         private System.Windows.Forms.Label label5;
     }
 }
