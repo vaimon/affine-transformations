@@ -87,7 +87,7 @@ namespace AffineTransformations
                 Point p=CrossLines();
                 if (!(p.X==int.MaxValue) && !(p.Y==int.MaxValue))
                 g.FillEllipse(new SolidBrush(Color.Red), p.X - 3, p.Y - 3, 7, 7);
-          
+                setFlags();
             }
 
         }

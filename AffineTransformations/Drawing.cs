@@ -86,6 +86,13 @@ namespace AffineTransformations
                 g.FillEllipse(blackBrush, e.X - 3, e.Y - 3, 7, 7);
             }
         }
+
+        void drawLineWithDot(Point from, Point to)
+        {
+            g.DrawLine(blackPen, from, to);
+            g.FillEllipse(blackBrush, from.X - 3, from.Y - 3, 7, 7);
+        }
+
         void DrawSec(MouseEventArgs e)
         {
             if (twolinesmode==1)

@@ -20,7 +20,7 @@ namespace AffineTransformations
             Point pnew = new Point((p1.X + p2.X) / 2, (p1.Y + p2.Y) / 2);//ищем центр отрезка
             rotateAroundPoint(pnew, canvas.Size);//поворачиваем
             g.Clear(Color.White);
-            g.DrawLine(blackPen,polygonPoints[0], polygonPoints[1]);
+            drawLineWithDot(polygonPoints[0], polygonPoints[1]);
             textAngle.Clear();//для последующей работы
 
 
@@ -30,8 +30,6 @@ namespace AffineTransformations
         {
             twolinesmode++;
             
-            
-
         }
         Tuple<int, int, int> GetFunc(Point p1, Point p2)//чтобы получить коэффициенты уравнения, через которое проходит прямая
         {
