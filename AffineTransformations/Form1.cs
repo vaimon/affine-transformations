@@ -21,6 +21,7 @@ namespace AffineTransformations
         bool isDrawingMode = false;
         bool isSomethingOnScreen = false;
         bool isPointChoosingMode = false;
+        int twolinesmode = 0;
 
         /// <summary>
         /// Самое главное здесь - набор точек (и для полигона, и для отрезка, и для всего...)
@@ -75,7 +76,20 @@ namespace AffineTransformations
             {
                 onPointChosen(e.Location);
             }
-            
+            if (twolinesmode==1)
+            {
+                DrawSec(e);
+                
+            }
+            if (twolinesmode == 2)
+            {
+               // DrawSec(e);
+                Point p=CrossLines();
+                if (!(p.X==int.MaxValue) && !(p.Y==int.MaxValue))
+                g.FillEllipse(new SolidBrush(Color.Red), p.X - 3, p.Y - 3, 7, 7);
+                setFlags();
+            }
+
         }
 
         private void comboBoxShape_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,5 +97,7 @@ namespace AffineTransformations
             canvas.Image = new Bitmap(1300, 900);
             polygonPoints.Clear();
         }
+
+        
     }
 }

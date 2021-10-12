@@ -12,6 +12,7 @@ namespace AffineTransformations
     {
         bool isScaling = false;
         bool isRotating = false;
+       
         private void buttonShift_Click(object sender, EventArgs e)
         {
             shift(int.Parse(textShiftX.Text), int.Parse(textShiftY.Text));
