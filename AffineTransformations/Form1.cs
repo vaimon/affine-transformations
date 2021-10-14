@@ -93,6 +93,7 @@ namespace AffineTransformations
                 drawPoint(e);                
                 PointInPolygon(e.Location);
                 isPointInPolygonMode = false;
+                buttonIsPointInPolygon.Enabled = true;
             }
         }
 
