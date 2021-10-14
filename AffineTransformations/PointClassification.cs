@@ -12,17 +12,13 @@ namespace AffineTransformations
         // Положение точки относительно направленного ребра
         // yb·xa - xb·ya > 0 => b слева от Oa    
         //               < 0 => b справа от Oa
-        string pos = "left";
         private void ClassifyPoint(Point edgeStart, Point edgeEnd, Point p)
         {
             int res = (p.X - edgeStart.X) * (edgeEnd.Y - edgeStart.Y) - (p.Y - edgeStart.Y) * (edgeEnd.X - edgeStart.X);
             if (res > 0)
                 labelClassifyPoint.Text = "Точка находится слева от ребра";
             else if (res < 0)
-            {
                 labelClassifyPoint.Text = "Точка находится справа от ребра";
-                pos = "right";
-            }
             else
                 labelClassifyPoint.Text = "Точка на отрезочке О_О Очень метко!";
         }
@@ -51,6 +47,20 @@ namespace AffineTransformations
                 labelConvexPolygon.Text = "Выпуклый многоугольник";
             else
                 labelConvexPolygon.Text = "Невыпуклый многоугольник";
+
+            bool inPolygon = false;
+            int j = polygonPoints.Count() - 1;
+            for (int i = 0; i < polygonPoints.Count(); i++)
+            {
+                if (polygonPoints[i].Y < p.Y && polygonPoints[j].Y >= p.Y || polygonPoints[j].Y < p.Y && polygonPoints[i].Y >= p.Y)
+                    if (polygonPoints[i].X + (p.Y - polygonPoints[i].Y) / (polygonPoints[j].Y - polygonPoints[i].Y) * (polygonPoints[j].X - polygonPoints[i].X) < p.X)
+                        inPolygon = !inPolygon;
+                j = i;
+            }
+            if (inPolygon)
+                labelPointInPolygon.Text = "Точка принадлежит";
+            else
+                labelPointInPolygon.Text = "Точка не принадлежит";
         }
 
         private void buttonIsPointInPolygon_Click(object sender, EventArgs e)

@@ -53,6 +53,7 @@ namespace AffineTransformations
             this.label5 = new System.Windows.Forms.Label();
             this.labelClassifyPoint = new System.Windows.Forms.Label();
             this.labelConvexPolygon = new System.Windows.Forms.Label();
+            this.labelPointInPolygon = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -321,10 +322,18 @@ namespace AffineTransformations
             // labelConvexPolygon
             // 
             this.labelConvexPolygon.AutoSize = true;
-            this.labelConvexPolygon.Location = new System.Drawing.Point(849, 58);
+            this.labelConvexPolygon.Location = new System.Drawing.Point(849, 15);
             this.labelConvexPolygon.Name = "labelConvexPolygon";
             this.labelConvexPolygon.Size = new System.Drawing.Size(0, 15);
             this.labelConvexPolygon.TabIndex = 6;
+            // 
+            // labelPointInPolygon
+            // 
+            this.labelPointInPolygon.AutoSize = true;
+            this.labelPointInPolygon.Location = new System.Drawing.Point(849, 49);
+            this.labelPointInPolygon.Name = "labelPointInPolygon";
+            this.labelPointInPolygon.Size = new System.Drawing.Size(0, 15);
+            this.labelPointInPolygon.TabIndex = 7;
             // 
             // Form1
             // 
@@ -332,6 +341,7 @@ namespace AffineTransformations
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1093, 540);
+            this.Controls.Add(this.labelPointInPolygon);
             this.Controls.Add(this.labelConvexPolygon);
             this.Controls.Add(this.labelClassifyPoint);
             this.Controls.Add(this.label5);
@@ -393,6 +403,7 @@ namespace AffineTransformations
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelClassifyPoint;
         private System.Windows.Forms.Label labelConvexPolygon;
+        private System.Windows.Forms.Label labelPointInPolygon;
     }
 }
 

@@ -16,6 +16,7 @@ namespace AffineTransformations
             polygonPoints.Clear();
             labelClassifyPoint.Text = "";
             labelConvexPolygon.Text = "";
+            labelPointInPolygon.Text = "";
             if (!isSomethingOnScreen)
             {
                 setFlags(isDrawingMode:true);
