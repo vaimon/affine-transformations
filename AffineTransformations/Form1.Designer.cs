@@ -330,7 +330,7 @@ namespace AffineTransformations
             // labelPointInPolygon
             // 
             this.labelPointInPolygon.AutoSize = true;
-            this.labelPointInPolygon.Location = new System.Drawing.Point(849, 49);
+            this.labelPointInPolygon.Location = new System.Drawing.Point(849, 38);
             this.labelPointInPolygon.Name = "labelPointInPolygon";
             this.labelPointInPolygon.Size = new System.Drawing.Size(0, 15);
             this.labelPointInPolygon.TabIndex = 7;

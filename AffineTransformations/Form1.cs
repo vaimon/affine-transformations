@@ -25,13 +25,13 @@ namespace AffineTransformations
         bool isPointClassifyMode = false;
         bool isPointInPolygonMode = false;
 
-        //bool PointForClassify = false;
 
         /// <summary>
         /// Самое главное здесь - набор точек (и для полигона, и для отрезка, и для всего...)
         /// </summary>
         List<Point> polygonPoints = new List<Point>();
 
+        // координаты отрезка для классификации точки
         List<Point> polygonPointsForClassify = new List<Point>();
 
         /// <summary>

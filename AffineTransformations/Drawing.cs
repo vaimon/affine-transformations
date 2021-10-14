@@ -32,7 +32,6 @@ namespace AffineTransformations
         }
         void drawPolygon(MouseEventArgs e)
         {
-            ///buttonIsPointInPolygon.Enabled = true;
             if (polygonPoints.Count > 0)
             {
                 if (polygonPoints.Count == 1)
@@ -54,8 +53,6 @@ namespace AffineTransformations
                 polygonPoints.Add(e.Location);
                 g.FillEllipse(blackBrush, e.X - 2, e.Y - 2, 5, 5);
             }
-           // if (isPointInPolygonMode)
-            //    return;
         }
 
         void redrawPolygon()
@@ -84,6 +81,7 @@ namespace AffineTransformations
                 polygonPointsForClassify.Add(polygonPoints.First());
                 polygonPointsForClassify.Add(e.Location);
                 setFlags(isAffineTransformationsEnabled: true);
+                buttonIsPointInPolygon.Enabled = false;
                 return;
             }
             else
