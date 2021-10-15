@@ -23,10 +23,17 @@ namespace AffineTransformations
         bool isPointChoosingMode = false;
         int twolinesmode = 0;
 
+        bool isPointClassifyMode = false;
+        bool isPointInPolygonMode = false;
+
+
         /// <summary>
         /// Самое главное здесь - набор точек (и для полигона, и для отрезка, и для всего...)
         /// </summary>
         List<Point> polygonPoints = new List<Point>();
+
+        // координаты отрезка для классификации точки
+        List<Point> polygonPointsForClassify = new List<Point>();
 
         /// <summary>
         /// Для рисования
@@ -53,7 +60,7 @@ namespace AffineTransformations
             buttonCrossLines.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 1;
 
             buttonClassifyPoint.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 1;
-            buttonIsPointInPolygon.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 0;
+            buttonIsPointInPolygon.Enabled = isAffineTransformationsEnabled && comboBoxShape.SelectedIndex == 1;
 
             isPointChoosingMode = isPointChoosing;
             buttonСhooseCentre.Visible = isPointChoosing;
@@ -76,6 +83,19 @@ namespace AffineTransformations
             {
                 onPointChosen(e.Location);
             }
+            else if (isPointClassifyMode)
+            {
+                drawPoint(e);
+                isPointClassifyMode = false;
+                ClassifyPoint(polygonPointsForClassify[0], polygonPointsForClassify[1], e.Location);
+            }
+            else if (isPointInPolygonMode)
+            {
+                drawPoint(e);                
+                PointInPolygon(e.Location);
+                isPointInPolygonMode = false;
+                buttonIsPointInPolygon.Enabled = true;
+            }
             if (twolinesmode==1)
             {
                 DrawSec(e);
@@ -96,6 +116,7 @@ namespace AffineTransformations
         {
             canvas.Image = new Bitmap(1300, 900);
             polygonPoints.Clear();
+            polygonPointsForClassify.Clear();
         }
 
         

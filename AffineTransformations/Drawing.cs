@@ -14,6 +14,9 @@ namespace AffineTransformations
         {
             canvas.Image = new Bitmap(1300, 900);
             polygonPoints.Clear();
+            labelClassifyPoint.Text = "";
+            labelConvexPolygon.Text = "";
+            labelPointInPolygon.Text = "";
             if (!isSomethingOnScreen)
             {
                 setFlags(isDrawingMode:true);
@@ -41,6 +44,7 @@ namespace AffineTransformations
                 {
                     g.DrawLine(blackPen, polygonPoints.Last(), polygonPoints[0]);
                     setFlags(isAffineTransformationsEnabled: true);
+                    buttonIsPointInPolygon.Enabled = true;
                     return;
                 }
                 g.DrawLine(blackPen, polygonPoints.Last(), e.Location);
@@ -73,11 +77,14 @@ namespace AffineTransformations
         void drawLine(MouseEventArgs e)
         {
             polygonPoints.Add(e.Location);
-            
-            if (polygonPoints.Count > 1 )
-            {
+            if (polygonPoints.Count > 1)
+            { 
+
                 g.DrawLine(blackPen, polygonPoints.First(), e.Location);
+                polygonPointsForClassify.Add(polygonPoints.First());
+                polygonPointsForClassify.Add(e.Location);
                 setFlags(isAffineTransformationsEnabled: true);
+                buttonIsPointInPolygon.Enabled = false;
                 return;
             }
             
@@ -114,7 +121,10 @@ namespace AffineTransformations
         }
         void drawPoint(MouseEventArgs e)
         {
-            polygonPoints.Add(e.Location);
+            if (!isPointInPolygonMode)
+            {
+                polygonPoints.Add(e.Location);
+            }
             g.FillEllipse(blackBrush,e.X-3,e.Y-3,7,7);
             setFlags(isAffineTransformationsEnabled: true);
         }
