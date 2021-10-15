@@ -49,16 +49,14 @@ namespace AffineTransformations
                 if (sign != tempSign) // если поворот отличается от остальных
                     isConvexPolygon = false;
             }
+
             ab = new Point(polygonPoints[0].X - polygonPoints[polygonPoints.Count - 1].X, polygonPoints[0].Y - polygonPoints[polygonPoints.Count - 1].Y);
             bc = new Point(polygonPoints[1].X - polygonPoints[0].X, polygonPoints[1].Y - polygonPoints[0].Y);
             rot = ab.X * bc.Y - ab.Y * bc.X;
             if (rot < 0)
                 tempSign = false;
-            else
-                tempSign = true;
             if (sign != tempSign) // если поворот отличается от остальных
                 isConvexPolygon = false;
-
             if (isConvexPolygon)
                 labelConvexPolygon.Text = "Выпуклый многоугольник";
             else
@@ -66,56 +64,19 @@ namespace AffineTransformations
 
 
             // определение принадлежности точки многоугольнику
-               bool inPolygon = false;
-            /*  int j = polygonPoints.Count() - 1;
-              for (int i = 0; i < polygonPoints.Count()/2; i++)
-              {
-                  if (polygonPoints[i].Y < p.Y && polygonPoints[j].Y >= p.Y || polygonPoints[j].Y < p.Y && polygonPoints[i].Y >= p.Y)
-                      if (polygonPoints[i].X + (p.Y - polygonPoints[i].Y) / (polygonPoints[j].Y - polygonPoints[i].Y) * (polygonPoints[j].X - polygonPoints[i].X) < p.X)
-                          inPolygon = true;
-                  j--;
-              }
-              if (inPolygon)
-                  labelPointInPolygon.Text = "Точка принадлежит";
-              else
-                  labelPointInPolygon.Text = "Точка не принадлежит"; */
-
-            int counter = 0;
-            double xinters;
-            Point p1, p2;
-            int pointCount = polygonPoints.Count;
-            p1 = polygonPoints[0];
-            for (int i = 1; i <= pointCount; i++)
+            bool inPolygon = false;
+            int j = polygonPoints.Count() - 1;
+            for (int i = 0; i < polygonPoints.Count(); i++)
             {
-                p2 = polygonPoints[i % pointCount];
-                if (p.Y > Math.Min(p1.Y, p2.Y)// Y контрольной точки больше минимума Y конца отрезка
-                && p.Y <= Math.Max(p1.Y, p2.Y))// Y контрольной точки меньше максимального Y конца отрезка
-                {
-                    if (p.X <= Math.Max(p1.X, p2.X))// X контрольной точки меньше максимального X конечной точки сегмента изолинии (для оценки используйте левый луч контрольной точки).
-                    {
-                        if (p1.Y != p2.Y)// Отрезок не параллелен оси X
-                        {
-                            xinters = (p.Y - p1.Y) * (p2.X - p1.X) / (p2.Y - p1.Y) + p1.X;
-                            if (p1.X == p2.X || p.X <= xinters)
-                            {
-                                counter++;
-                            }
-                        }
-                    }
-
-                }
-                p1 = p2;
+                if (polygonPoints[i].Y < p.Y && polygonPoints[j].Y >= p.Y || polygonPoints[j].Y < p.Y && polygonPoints[i].Y >= p.Y)
+                    if (polygonPoints[i].X + (p.Y - polygonPoints[i].Y) / (polygonPoints[j].Y - polygonPoints[i].Y) * (polygonPoints[j].X - polygonPoints[i].X) < p.X)
+                        inPolygon = !inPolygon;
+                j = i;
             }
-
-            if (counter % 2 == 0)
-
-                inPolygon = false;
-            else
-                inPolygon = true;
             if (inPolygon)
                 labelPointInPolygon.Text = "Точка принадлежит";
             else
-                labelPointInPolygon.Text = "Точка не принадлежит"; 
+                labelPointInPolygon.Text = "Точка не принадлежит";
         }
 
         private void buttonIsPointInPolygon_Click(object sender, EventArgs e)
