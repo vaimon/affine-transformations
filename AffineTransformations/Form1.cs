@@ -21,6 +21,7 @@ namespace AffineTransformations
         bool isDrawingMode = false;
         bool isSomethingOnScreen = false;
         bool isPointChoosingMode = false;
+        int twolinesmode = 0;
 
         bool isPointClassifyMode = false;
         bool isPointInPolygonMode = false;
@@ -95,6 +96,20 @@ namespace AffineTransformations
                 isPointInPolygonMode = false;
                 buttonIsPointInPolygon.Enabled = true;
             }
+            if (twolinesmode==1)
+            {
+                DrawSec(e);
+                
+            }
+            if (twolinesmode == 2)
+            {
+               // DrawSec(e);
+                Point p=CrossLines();
+                if (!(p.X==int.MaxValue) && !(p.Y==int.MaxValue))
+                g.FillEllipse(new SolidBrush(Color.Red), p.X - 3, p.Y - 3, 7, 7);
+                setFlags();
+            }
+
         }
 
         private void comboBoxShape_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,5 +118,7 @@ namespace AffineTransformations
             polygonPoints.Clear();
             polygonPointsForClassify.Clear();
         }
+
+        
     }
 }
