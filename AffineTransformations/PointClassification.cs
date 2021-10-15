@@ -37,16 +37,26 @@ namespace AffineTransformations
             if (rot < 0)
                 sign = false; // для проверки выпуклости
 
-            for (int i = 2; i < polygonPoints.Count-1; i++)
+            for (int i = 1; i < polygonPoints.Count-1; i++)
             {
                 ab = new Point(polygonPoints[i].X - polygonPoints[i - 1].X, polygonPoints[i].Y - polygonPoints[i - 1].Y);
                 bc = new Point(polygonPoints[i+1].X - polygonPoints[i].X, polygonPoints[i+1].Y - polygonPoints[i].Y);
                 rot = ab.X * bc.Y - ab.Y * bc.X;
                 if (rot < 0)
                     tempSign = false;
+                else
+                    tempSign = true;
                 if (sign != tempSign) // если поворот отличается от остальных
                     isConvexPolygon = false;
             }
+
+            ab = new Point(polygonPoints[0].X - polygonPoints[polygonPoints.Count - 1].X, polygonPoints[0].Y - polygonPoints[polygonPoints.Count - 1].Y);
+            bc = new Point(polygonPoints[1].X - polygonPoints[0].X, polygonPoints[1].Y - polygonPoints[0].Y);
+            rot = ab.X * bc.Y - ab.Y * bc.X;
+            if (rot < 0)
+                tempSign = false;
+            if (sign != tempSign) // если поворот отличается от остальных
+                isConvexPolygon = false;
             if (isConvexPolygon)
                 labelConvexPolygon.Text = "Выпуклый многоугольник";
             else
